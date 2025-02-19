@@ -17,7 +17,7 @@ spec:
    spec:
      containers:
      - name: nginx
-       image: openrc/portfolio:latest
+       image: openrc/portfolio:v1
        ports:
        - containerPort: 80
  strategy:
