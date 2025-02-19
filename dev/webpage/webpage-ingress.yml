@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata: 
+  name: webpage
+  namespace: dev
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: webpage.machinesarehere.in
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: webpage-service
+            port: 
+              number: 80
+  tls:
+    - hosts:
+        - webpage.machinesarehere.in
+      secretName: machinesarehere-tls                

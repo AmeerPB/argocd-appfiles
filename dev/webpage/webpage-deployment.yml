@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: webpage
+ namespace: dev
+ labels:
+   app: nginx
+spec:
+ replicas: 2
+ selector:
+   matchLabels:
+     app: webpage
+ template:
+   metadata:
+     labels:
+       app: webpage
+   spec:
+     containers:
+     - name: webpage
+       image: openrc/webpage:v1
+       ports:
+       - containerPort: 80
+ strategy:
+   type: RollingUpdate
+   rollingUpdate:
+     maxUnavailable: 1
