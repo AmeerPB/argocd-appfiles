@@ -57,7 +57,7 @@ spec:
   tls:
   - hosts:
       - nginx1.machinesarehere.in
-    secretName: machines-tls
+    secretName: machines-tls-secret
 
 
 
