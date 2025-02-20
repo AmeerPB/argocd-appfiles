@@ -17,7 +17,7 @@ spec:
    spec:
      containers:
      - name: webpage
-       image: openrc/webpage:v1
+       image: openrc/xsec-website:v1
        ports:
        - containerPort: 80
  strategy:
