@@ -11,4 +11,4 @@ spec:
   ingressClassName: tailscale
   tls:
     - hosts:
-        - argocd.duck-pineapplefish.ts.net
+        - {{ .Values.tailscale.url }}
