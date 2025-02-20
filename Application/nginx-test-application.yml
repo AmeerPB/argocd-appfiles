@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-production
+  namespace: dev
+spec:
+  project: production
+  source:
+    repoURL: https://github.com/AmeerPB/argocd-appfiles.git
+    targetRevision: HEAD
+    path: production/
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: production
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true
