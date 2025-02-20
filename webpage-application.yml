@@ -11,7 +11,7 @@ spec:
     path: dev/webpage/
   destination:
     server: https://kubernetes.default.svc
-    namespace: dev
+    namespace: dev/webapp/
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
