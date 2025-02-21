@@ -5,9 +5,9 @@ metadata:
   namespace: argocd
 spec:
   sourceRepos:
-    - https://charts.jetstack.io
+    - https://github.com/AmeerPB/argocd-appfiles.git
   destinations:
-    - namespace: cert-manager
+    - namespace: production
       server: https://kubernetes.default.svc
   clusterResourceWhitelist:
     - group: "*"
